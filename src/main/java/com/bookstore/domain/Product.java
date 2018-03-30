@@ -28,6 +28,9 @@ public class Product {
         this.unitsInStock = unitsInStock;
     }
 
+    public Product() {
+    }
+
     public String getProductId() {
         return productId;
     }
