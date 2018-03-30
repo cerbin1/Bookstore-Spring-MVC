@@ -16,7 +16,7 @@
 <body>
 <div class="jumbotron">
     <h1> ${greeting} </h1>
-    <p>Make yourself comfortable in ours ${shop} </p>
+    <p>Make yourself comfortable in our ${shop} </p>
 </div>
 </body>
 </html>
