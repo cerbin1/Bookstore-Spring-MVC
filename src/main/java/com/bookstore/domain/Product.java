@@ -20,6 +20,14 @@ public class Product {
         this.unitPrice = unitPrice;
     }
 
+    public Product(String productId, String name, BigDecimal unitPrice, String description, long unitsInStock) {
+        this.productId = productId;
+        this.name = name;
+        this.unitPrice = unitPrice;
+        this.description = description;
+        this.unitsInStock = unitsInStock;
+    }
+
     public String getProductId() {
         return productId;
     }
