@@ -1,4 +1,4 @@
-package com.bookstore.presentation.controller;
+package com.bookstore.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
