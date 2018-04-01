@@ -22,6 +22,14 @@ public class InMemoryProductRepository implements ProductRepository {
         return jdbcTemplate.query("SELECT * FROM PRODUCTS", params, new ProductMapper());
     }
 
+    @Override
+    public List<Product> getProductsByCategory(String categoryName) {
+        String sql = "SELECT * FROM PRODUCTS WHERE CATEGORY = :category";
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("category", categoryName);
+        return jdbcTemplate.query(sql, params, new ProductMapper());
+    }
+
     private class ProductMapper implements RowMapper<Product> {
         @Override
         public Product mapRow(ResultSet resultSet, int i) throws SQLException {
