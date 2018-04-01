@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
@@ -28,6 +29,12 @@ public class InMemoryProductRepository implements ProductRepository {
         HashMap<String, Object> params = new HashMap<>();
         params.put("category", categoryName);
         return jdbcTemplate.query(sql, params, new ProductMapper());
+    }
+
+    @Override
+    public List<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
+        String sql = "SELECT * FROM PRODUCTS WHERE CATEGORY IN (:categories) AND MANUFACTURER IN (:brands)";
+        return jdbcTemplate.query(sql, filterParams, new ProductMapper());
     }
 
     private class ProductMapper implements RowMapper<Product> {
