@@ -45,6 +45,34 @@ public class InMemoryProductRepository implements ProductRepository {
         return jdbcTemplate.queryForObject(sql, params, new ProductMapper());
     }
 
+    @Override
+    public void addProduct(Product newProduct) {
+        String sql = "INSERT INTO PRODUCTS (ID, "
+                + "NAME,"
+                + "DESCRIPTION,"
+                + "UNIT_PRICE,"
+                + "MANUFACTURER,"
+                + "CATEGORY,"
+                + "CONDITION,"
+                + "UNITS_IN_STOCK,"
+                + "UNITS_IN_ORDER,"
+                + "DISCONTINUED) "
+                + "VALUES (:id, :name, :desc, :price, :manufacturer, :category," +
+                " :condition, :inStock, :inOrder, :discontinued)";
+        Map<String, Object> params = new HashMap<>();
+        params.put("id", newProduct.getProductId());
+        params.put("name", newProduct.getName());
+        params.put("desc", newProduct.getDescription());
+        params.put("price", newProduct.getUnitPrice());
+        params.put("manufacturer", newProduct.getManufacturer());
+        params.put("category", newProduct.getCategory());
+        params.put("condition", newProduct.getCondition());
+        params.put("inStock", newProduct.getUnitsInStock());
+        params.put("inOrder", newProduct.getUnitsInOrder());
+        params.put("discontinued", newProduct.isDiscontinued());
+        jdbcTemplate.update(sql, params);
+    }
+
     private class ProductMapper implements RowMapper<Product> {
         @Override
         public Product mapRow(ResultSet resultSet, int i) throws SQLException {
