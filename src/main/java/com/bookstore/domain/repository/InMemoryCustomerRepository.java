@@ -35,6 +35,7 @@ public class InMemoryCustomerRepository implements CustomerRepository {
             Customer customer = new Customer();
             customer.setCustomerId(resultSet.getString("ID"));
             customer.setName(resultSet.getString("NAME"));
+            customer.setSurname(resultSet.getString("SURNAME"));
             customer.setAddress(resultSet.getString("ADDRESS"));
             customer.setNoOfOrders(resultSet.getInt("ORDERS_COUNT"));
             return customer;

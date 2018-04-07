@@ -3,6 +3,9 @@ package com.bookstore.domain;
 public class Customer {
     private String customerId;
     private String name;
+
+
+    private String surname;
     private String address;
     private int noOfOrders;
 
@@ -31,6 +34,14 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getAddress() {

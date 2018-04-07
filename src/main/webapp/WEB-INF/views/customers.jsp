@@ -23,6 +23,7 @@ charset=ISO-8859-1">
             <row>
                 <td>Id</td>
                 <td>Name</td>
+                <td>Surname</td>
                 <td>Address</td>
                 <td>Orders count</td>
             </row>
@@ -30,6 +31,7 @@ charset=ISO-8859-1">
                 <tr>
                     <td>${customer.customerId}</td>
                     <td>${customer.name}</td>
+                    <td>${customer.surname}</td>
                     <td>${customer.address}</td>
                     <td>${customer.noOfOrders}</td>
                 </tr>

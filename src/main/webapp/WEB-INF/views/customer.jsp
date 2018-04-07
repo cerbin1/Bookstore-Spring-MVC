@@ -24,7 +24,7 @@ charset=ISO-8859-1">
         <div class="col-sm-4">
             <div class="thumbnail">
                 <div class="caption">
-                    <h3>${customer.name}</h3>
+                    <h3>${customer.name} ${customer.surname}</h3>
                     <p>Address: ${customer.address}</p>
                     <p>${customer.name} have made ${customer.noOfOrders} orders</p>
                     <a href="<spring:url value="/customers" />" class="btn btn-default">

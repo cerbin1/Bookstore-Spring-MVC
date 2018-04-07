@@ -9,7 +9,7 @@ INSERT INTO PRODUCTS VALUES ('P1236', 'Nexus 7',
                              300, 'Google', 'Tablet', 'New', 1000, 0, FALSE);
 
 
-INSERT INTO CUSTOMERS VALUES('C145', 'John', 'Sunny St. 198', 23);
-INSERT INTO CUSTOMERS VALUES('D1242', 'Roger', 'Long St. 1', 1);
-INSERT INTO CUSTOMERS VALUES('H92', 'Ann', 'Petersburg St. 154', 6);
-INSERT INTO CUSTOMERS VALUES('Z1', 'Melisande', 'Bakery St. 15', 2);
+INSERT INTO CUSTOMERS VALUES('C145', 'John', 'Rendack', 'Sunny St. 198', 23);
+INSERT INTO CUSTOMERS VALUES('D1242', 'Roger', 'That', 'Long St. 1', 1);
+INSERT INTO CUSTOMERS VALUES('H92', 'Ann', 'Hopkins', 'Petersburg St. 154', 6);
+INSERT INTO CUSTOMERS VALUES('Z1', 'Melisande', 'King', 'Bakery St. 15', 2);
