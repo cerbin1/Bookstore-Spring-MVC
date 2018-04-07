@@ -26,7 +26,7 @@ charset=ISO-8859-1">
                 <div class="caption">
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
-                    <p>Category: product.category</p>
+                    <p>Category: ${product.category}</p>
                     <p>Manufacturer: ${product.manufacturer}</p>
                     <p>Price: ${product.unitPrice} $</p>
                     <p>Available ${product.unitsInStock} units in stock</p>
