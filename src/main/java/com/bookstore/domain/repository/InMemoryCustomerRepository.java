@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 
 @Repository
@@ -18,6 +19,14 @@ public class InMemoryCustomerRepository implements CustomerRepository {
     @Override
     public List<Customer> getAllCustomers() {
         return jdbcTemplate.query("SELECT * FROM CUSTOMERS", new CustomerMapper());
+    }
+
+    @Override
+    public Customer getCustomerById(String customerId) {
+        String sql = "SELECT * FROM CUSTOMERS WHERE ID = :customerId";
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("customerId", customerId);
+        return jdbcTemplate.queryForObject(sql, params, new CustomerMapper());
     }
 
     private class CustomerMapper implements RowMapper<Customer> {
