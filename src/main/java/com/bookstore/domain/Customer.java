@@ -13,6 +13,10 @@ public class Customer {
         this.noOfOrders = noOfOrders;
     }
 
+    public Customer() {
+
+    }
+
     public String getCustomerId() {
         return customerId;
     }
