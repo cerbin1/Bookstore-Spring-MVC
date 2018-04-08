@@ -5,6 +5,9 @@ import com.bookstore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +18,19 @@ import java.util.Map;
 public class ProductController {
     @Autowired
     ProductService productService;
+
+    @InitBinder
+    public void initializeBinder(WebDataBinder binder) {
+        binder.setAllowedFields(
+                "productId",
+                "name",
+                "unitPrice",
+                "description",
+                "manufacturer",
+                "category",
+                "unitsInStock",
+                "condition");
+    }
 
     @RequestMapping("products")
     public String getAllProducts(Model model) {
@@ -48,7 +64,14 @@ public class ProductController {
     }
 
     @RequestMapping(value = "products/add", method = RequestMethod.POST)
-    public String processAddProductForm(@ModelAttribute("newProduct") Product newProduct) {
+    public String processAddProductForm(
+            @ModelAttribute("newProduct") Product newProduct,
+            BindingResult result
+    ) {
+        String[] suppressedFields = result.getSuppressedFields();
+        if (suppressedFields.length > 0) {
+            throw new RuntimeException("Attempting to bind disallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
+        }
         productService.addProduct(newProduct);
         return "redirect:/market/products";
     }
