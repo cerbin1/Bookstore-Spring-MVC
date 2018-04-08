@@ -2,6 +2,8 @@
            uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form"
            uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" 
+           uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;
@@ -23,27 +25,32 @@ charset=ISO-8859-1">
         <fieldset>
             <legend>Add new customer</legend>
             <div class="form-group">
-                <label class="control-label col-lg-2 col-lg-2" for="productId">Customer Id</label>
+                <label class="control-label col-lg-2 col-lg-2" for="productId"><spring:message
+                        code="addCustomer.form.customerId.label"/></label>
                 <div class="col-lg-10">
                     <form:input id="productId" path="customerId"
                                 type="text" class="form:input-large"/>
                 </div>
-                <label class="control-label col-lg-2 col-lg-2" for="name">Name</label>
+                <label class="control-label col-lg-2 col-lg-2" for="name"><spring:message
+                        code="addCustomer.form.customerName.label"/></label>
                 <div class="col-lg-10">
                     <form:input id="name" path="name"
                                 type="text" class="form:input-large"/>
                 </div>
-                <label class="control-label col-lg-2 col-lg-2" for="surname">Surname</label>
+                <label class="control-label col-lg-2 col-lg-2" for="surname"><spring:message
+                        code="addCustomer.form.customerSurname.label"/></label>
                 <div class="col-lg-10">
                     <form:input id="surname" path="surname"
                                 type="text" class="form:input-large"/>
                 </div>
-                <label class="control-label col-lg-2 col-lg-2" for="address">Address</label>
+                <label class="control-label col-lg-2 col-lg-2" for="address"><spring:message
+                        code="addCustomer.form.customerAddress.label"/></label>
                 <div class="col-lg-10">
                     <form:input id="address" path="address"
                                 type="text" class="form:input-large"/>
                 </div>
-                <label class="control-label col-lg-2 col-lg-2" for="noOfOrders">Orders count</label>
+                <label class="control-label col-lg-2 col-lg-2" for="noOfOrders"><spring:message
+                        code="addCustomer.form.customerNumberOfOrders.label"/></label>
                 <div class="col-lg-10">
                     <form:input id="noOfOrders" path="noOfOrders"
                                 type="text" class="form:input-large"/>
