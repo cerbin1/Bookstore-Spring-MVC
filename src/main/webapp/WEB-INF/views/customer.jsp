@@ -8,14 +8,14 @@
 charset=ISO-8859-1">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Products</title>
+    <title>Customer</title>
 </head>
 <body>
 <section>
     <div class="jumbotron">
         <div class="container">
             <h1>Customer</h1>
-            <p>Information about customer with ID number: ${customer.customerId}</p>
+            <p>Information about customer with ID: ${customer.customerId}</p>
         </div>
     </div>
 </section>

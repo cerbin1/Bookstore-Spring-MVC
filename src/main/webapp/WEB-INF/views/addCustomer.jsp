@@ -14,8 +14,7 @@ charset=ISO-8859-1">
 <section>
     <div class="jumbotron">
         <div class="container">
-            <h1>Customers</h1>
-            <p>Add customer</p>
+            <h1>Customer</h1>
         </div>
     </div>
 </section>
@@ -55,6 +54,7 @@ charset=ISO-8859-1">
                         <input type="submit" id="btnAdd" class="btn btn-primary" value="Add"/>
                     </div>
                 </div>
+            </div>
         </fieldset>
     </form:form>
 </section>

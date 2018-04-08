@@ -8,14 +8,13 @@
 charset=ISO-8859-1">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Products</title>
+    <title>Add product</title>
 </head>
 <body>
 <section>
     <div class="jumbotron">
         <div class="container">
-            <h1>Products</h1>
-            <p>Add products</p>
+            <h1>Product</h1>
         </div>
     </div>
 </section>

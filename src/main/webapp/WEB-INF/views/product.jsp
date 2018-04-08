@@ -8,14 +8,14 @@
 charset=ISO-8859-1">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Products</title>
+    <title>Product</title>
 </head>
 <body>
 <section>
     <div class="jumbotron">
         <div class="container">
-            <h1>Products</h1>
-            <p>All the available products in our store</p>
+            <h1>Product</h1>
+            <p>Information about ${product.name}</p>
         </div>
     </div>
 </section>
@@ -36,7 +36,7 @@ charset=ISO-8859-1">
                         </a>
                     </p>
                     <a href="<spring:url value="/market/products" />" class="btn btn-default">
-                        <span class="glyphicon-hand-left glyphicon"></span> back
+                        <span class="glyphicon-hand-left glyphicon"></span> Back
                     </a>
                 </div>
             </div>
