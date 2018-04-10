@@ -34,6 +34,7 @@ charset=ISO-8859-1">
                     <p>Manufacturer: ${product.manufacturer}</p>
                     <p>Price: ${product.unitPrice} $</p>
                     <p>Available ${product.unitsInStock} units in stock</p>
+                    <p><a href="/pdf/${product.productId}.pdf" download>Manual</a></p>
                     <p>
                         <a href="#" class="btn btn-warning btn-large">
                             <span class="glyphicon-shopping-cart glyphicon"></span> Order Now
