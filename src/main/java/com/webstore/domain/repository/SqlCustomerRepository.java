@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class InMemoryCustomerRepository implements CustomerRepository {
+public class SqlCustomerRepository implements CustomerRepository {
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
 
