@@ -25,7 +25,7 @@ charset=ISO-8859-1">
                 <td>Name</td>
                 <td>Surname</td>
                 <td>Address</td>
-                <td>Orders count</td>
+                <td>Number of orders</td>
             </row>
             <c:forEach items="${customers}" var="customer">
                 <tr>
