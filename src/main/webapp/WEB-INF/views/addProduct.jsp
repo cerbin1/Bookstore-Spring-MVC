@@ -21,7 +21,7 @@ charset=ISO-8859-1">
     </div>
 </section>
 <section class="container">
-    <form:form method="POST" modelAttribute="newProduct" class="form-horizontal">
+    <form:form method="POST" modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
         <fieldset>
             <legend>Add new product</legend>
             <div class="form-group">
@@ -82,6 +82,13 @@ charset=ISO-8859-1">
                     <label class="control-label col-lg-2" for="condition-refurbished">
                         <spring:message code="addProduct.form.productCondition.refurbished.label"/></label>
                     <form:radiobutton id="condition-refurbished" path="condition" value="Refurbished"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="productImage">
+                    <spring:message code="addProduct.form.productImage.label"/></label>
+                <div class="col-lg-10">
+                    <form:input id="productImage" class="form:input-large" path="productImage" type="file"/>
                 </div>
             </div>
             <div class="form-group">

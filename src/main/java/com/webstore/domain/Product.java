@@ -1,5 +1,7 @@
 package com.webstore.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.math.BigDecimal;
 
 public class Product {
@@ -13,6 +15,8 @@ public class Product {
     private long unitsInOrder;
     private boolean discontinued;
     private String condition;
+
+    private MultipartFile productImage;
 
     public Product(String productId, String name, BigDecimal unitPrice) {
         this.productId = productId;
@@ -111,6 +115,13 @@ public class Product {
         this.condition = condition;
     }
 
+    public MultipartFile getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
+    }
 
     @Override
     public boolean equals(Object obj) {

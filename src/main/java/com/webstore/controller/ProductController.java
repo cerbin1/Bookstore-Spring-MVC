@@ -9,7 +9,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +32,8 @@ public class ProductController {
                 "manufacturer",
                 "category",
                 "unitsInStock",
-                "condition");
+                "condition",
+                "productImage");
     }
 
     @RequestMapping("products")
@@ -66,11 +70,23 @@ public class ProductController {
     @RequestMapping(value = "products/add", method = RequestMethod.POST)
     public String processAddProductForm(
             @ModelAttribute("newProduct") Product newProduct,
-            BindingResult result
+            BindingResult result,
+            HttpServletRequest request
     ) {
         String[] suppressedFields = result.getSuppressedFields();
         if (suppressedFields.length > 0) {
             throw new RuntimeException("Attempting to bind disallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
+        }
+        MultipartFile productImage = newProduct.getProductImage();
+        String rootDirectory =
+                request.getSession().getServletContext().getRealPath("/");
+        if (productImage != null && !productImage.isEmpty()) {
+            try {
+                String path = rootDirectory + "resources/images/" + newProduct.getProductId() + ".jpg";
+                productImage.transferTo(new File(path));
+            } catch (Exception e) {
+                throw new RuntimeException("Product Image saving failed", e);
+            }
         }
         productService.addProduct(newProduct);
         return "redirect:/market/products";
