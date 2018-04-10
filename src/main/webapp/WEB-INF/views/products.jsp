@@ -1,7 +1,5 @@
-<%@ taglib prefix="c"
-           uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring"
-           uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;
@@ -25,7 +23,7 @@ charset=ISO-8859-1">
             <div class="col-sm-6 col-md-3">
                 <div class="thumbnail">
                     <img src="<c:url value="/img/${product.productId}.jpg">
-                    </c:url>" alt="image" style = "width:100%"/>
+                    </c:url>" alt="image" style="width:100%"/>
                     <div class="caption">
                         <h3>${product.name}</h3>
                         <p>${product.description}</p>
