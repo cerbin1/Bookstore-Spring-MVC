@@ -33,7 +33,8 @@ public class ProductController {
                 "category",
                 "unitsInStock",
                 "condition",
-                "productImage");
+                "productImage",
+                "productManualFile");
     }
 
     @RequestMapping("products")
@@ -77,9 +78,9 @@ public class ProductController {
         if (suppressedFields.length > 0) {
             throw new RuntimeException("Attempting to bind disallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
         }
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+
         MultipartFile productImage = newProduct.getProductImage();
-        String rootDirectory =
-                request.getSession().getServletContext().getRealPath("/");
         if (productImage != null && !productImage.isEmpty()) {
             try {
                 String path = rootDirectory + "resources/images/" + newProduct.getProductId() + ".jpg";
@@ -88,6 +89,17 @@ public class ProductController {
                 throw new RuntimeException("Product Image saving failed", e);
             }
         }
+
+        MultipartFile productManualFile = newProduct.getProductManualFile();
+        if (productManualFile != null && !productManualFile.isEmpty()) {
+            try {
+                String path = rootDirectory + "resources/pdf/" + newProduct.getProductId() + ".pdf";
+                productManualFile.transferTo(new File(path));
+            } catch (Exception e) {
+                throw new RuntimeException("Product Manual file saving failed", e);
+            }
+        }
+
         productService.addProduct(newProduct);
         return "redirect:/market/products";
     }

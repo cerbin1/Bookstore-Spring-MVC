@@ -17,6 +17,7 @@ public class Product {
     private String condition;
 
     private MultipartFile productImage;
+    private MultipartFile productManualFile;
 
     public Product(String productId, String name, BigDecimal unitPrice) {
         this.productId = productId;
@@ -121,6 +122,14 @@ public class Product {
 
     public void setProductImage(MultipartFile productImage) {
         this.productImage = productImage;
+    }
+
+    public MultipartFile getProductManualFile() {
+        return productManualFile;
+    }
+
+    public void setProductManualFile(MultipartFile productManualFile) {
+        this.productManualFile = productManualFile;
     }
 
     @Override
