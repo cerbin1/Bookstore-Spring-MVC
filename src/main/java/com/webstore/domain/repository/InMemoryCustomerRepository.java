@@ -37,14 +37,14 @@ public class InMemoryCustomerRepository implements CustomerRepository {
                 + "NAME,"
                 + "SURNAME,"
                 + "ADDRESS,"
-                + "ORDERS_COUNT) "
-                + "VALUES (:id, :name, :surname, :address, :ordersCount)";
+                + "NO_OF_ORDERS) "
+                + "VALUES (:id, :name, :surname, :address, :noOfOrders)";
         Map<String, Object> params = new HashMap<>();
         params.put("id", newCustomer.getCustomerId());
         params.put("name", newCustomer.getName());
         params.put("surname", newCustomer.getSurname());
         params.put("address", newCustomer.getAddress());
-        params.put("ordersCount", newCustomer.getNoOfOrders());
+        params.put("noOfOrders", newCustomer.getNoOfOrders());
         jdbcTemplate.update(sql, params);
     }
 
@@ -56,7 +56,7 @@ public class InMemoryCustomerRepository implements CustomerRepository {
             customer.setName(resultSet.getString("NAME"));
             customer.setSurname(resultSet.getString("SURNAME"));
             customer.setAddress(resultSet.getString("ADDRESS"));
-            customer.setNoOfOrders(resultSet.getInt("ORDERS_COUNT"));
+            customer.setNoOfOrders(resultSet.getInt("NO_OF_ORDERS"));
             return customer;
         }
     }
