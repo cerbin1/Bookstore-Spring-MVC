@@ -1,6 +1,6 @@
-package com.bookstore.service;
+package com.webstore.service;
 
-import com.bookstore.domain.Product;
+import com.webstore.domain.Product;
 
 import java.util.List;
 import java.util.Map;

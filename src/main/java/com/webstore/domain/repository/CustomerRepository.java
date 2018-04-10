@@ -1,10 +1,10 @@
-package com.bookstore.service;
+package com.webstore.domain.repository;
 
-import com.bookstore.domain.Customer;
+import com.webstore.domain.Customer;
 
 import java.util.List;
 
-public interface CustomerService {
+public interface CustomerRepository {
     List<Customer> getAllCustomers();
 
     Customer getCustomerById(String customerId);

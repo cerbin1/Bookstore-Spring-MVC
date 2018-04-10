@@ -1,6 +1,6 @@
-package com.bookstore.domain.repository;
+package com.webstore.domain.repository;
 
-import com.bookstore.domain.Product;
+import com.webstore.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;

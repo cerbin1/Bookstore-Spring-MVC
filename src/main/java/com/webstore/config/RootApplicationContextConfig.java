@@ -1,4 +1,4 @@
-package com.bookstore.config;
+package com.webstore.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan("com.bookstore")
+@ComponentScan("com.webstore")
 public class RootApplicationContextConfig {
     @Bean
     public DataSource dataSource() {

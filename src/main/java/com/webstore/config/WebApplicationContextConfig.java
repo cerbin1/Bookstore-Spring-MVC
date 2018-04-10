@@ -1,4 +1,4 @@
-package com.bookstore.config;
+package com.webstore.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +10,7 @@ import org.springframework.web.util.UrlPathHelper;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.bookstore")
+@ComponentScan("com.webstore")
 public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {

@@ -1,7 +1,7 @@
-package com.bookstore.service;
+package com.webstore.service;
 
-import com.bookstore.domain.Customer;
-import com.bookstore.domain.repository.CustomerRepository;
+import com.webstore.domain.Customer;
+import com.webstore.domain.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

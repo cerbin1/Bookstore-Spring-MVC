@@ -1,4 +1,4 @@
-package com.bookstore.config;
+package com.webstore.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

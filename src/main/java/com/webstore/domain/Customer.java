@@ -1,4 +1,4 @@
-package com.bookstore.domain;
+package com.webstore.domain;
 
 public class Customer {
     private String customerId;
