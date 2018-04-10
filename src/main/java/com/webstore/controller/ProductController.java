@@ -75,4 +75,10 @@ public class ProductController {
         productService.addProduct(newProduct);
         return "redirect:/market/products";
     }
+
+    @RequestMapping("stock/update")
+    public String updateStock() {
+        productService.updateAllStock();
+        return "redirect:/market/products/";
+    }
 }

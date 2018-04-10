@@ -15,4 +15,6 @@ public interface ProductService {
     Product getProductById(String productId);
 
     void addProduct(Product newProduct);
+
+    void updateAllStock();
 }

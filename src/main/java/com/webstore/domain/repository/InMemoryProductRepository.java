@@ -73,6 +73,15 @@ public class InMemoryProductRepository implements ProductRepository {
         jdbcTemplate.update(sql, params);
     }
 
+    @Override
+    public void updateStock(String productId, long noOfUnits) {
+        String sql = "UPDATE PRODUCTS SET UNITS_IN_STOCK = :unitsInStock WHERE ID = :id";
+        Map<String, Object> params = new HashMap<>();
+        params.put("unitsInStock", noOfUnits);
+        params.put("id", productId);
+        jdbcTemplate.update(sql, params);
+    }
+
     private class ProductMapper implements RowMapper<Product> {
         @Override
         public Product mapRow(ResultSet resultSet, int i) throws SQLException {
