@@ -1,9 +1,13 @@
 package com.webstore.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.math.BigDecimal;
 
+@XmlRootElement
 public class Product {
     private String productId;
     private String name;
@@ -16,7 +20,9 @@ public class Product {
     private boolean discontinued;
     private String condition;
 
+    @JsonIgnore
     private MultipartFile productImage;
+    @JsonIgnore
     private MultipartFile productManualFile;
 
     public Product(String productId, String name, BigDecimal unitPrice) {
@@ -116,6 +122,7 @@ public class Product {
         this.condition = condition;
     }
 
+    @XmlTransient
     public MultipartFile getProductImage() {
         return productImage;
     }
@@ -124,6 +131,7 @@ public class Product {
         this.productImage = productImage;
     }
 
+    @XmlTransient
     public MultipartFile getProductManualFile() {
         return productManualFile;
     }
