@@ -1,7 +1,9 @@
 package com.webstore.domain.repository;
 
 import com.webstore.domain.Product;
+import com.webstore.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -42,7 +44,11 @@ public class SqlProductRepository implements ProductRepository {
         String sql = "SELECT * FROM PRODUCTS WHERE ID = :id";
         Map<String, Object> params = new HashMap<>();
         params.put("id", productId);
-        return jdbcTemplate.queryForObject(sql, params, new ProductMapper());
+        try {
+            return jdbcTemplate.queryForObject(sql, params, new ProductMapper());
+        } catch (DataAccessException e) {
+            throw new ProductNotFoundException(productId);
+        }
     }
 
     @Override
