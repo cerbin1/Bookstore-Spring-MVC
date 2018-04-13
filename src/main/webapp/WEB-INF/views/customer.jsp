@@ -6,14 +6,20 @@
 charset=ISO-8859-1">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Customer</title>
+    <title><spring:message code="customer.title"/></title>
 </head>
 <body>
 <section>
+    <div class="pull-right" style="padding-right:50px">
+        <a href="?language=en"><spring:message code="language.en"/></a>|
+        <a href="?language=pl"><spring:message code="language.pl"/></a>
+    </div>
+</section>
+<section>
     <div class="jumbotron">
         <div class="container">
-            <h1>Customer</h1>
-            <p>Information about customer with ID: ${customer.customerId}</p>
+            <h1><spring:message code="customer.jumbotron.h1"/></h1>
+            <p><spring:message code="customer.jumbotron.p"/>${customer.customerId}</p>
         </div>
     </div>
 </section>
@@ -23,10 +29,10 @@ charset=ISO-8859-1">
             <div class="thumbnail">
                 <div class="caption">
                     <h3>${customer.name} ${customer.surname}</h3>
-                    <p>Address: ${customer.address}</p>
-                    <p>${customer.name} have made ${customer.noOfOrders} orders</p>
+                    <p><spring:message code="customer.address"/> ${customer.address}</p>
+                    <p><spring:message code="customer.numberOfOrders"/>${customer.noOfOrders}</p>
                     <a href="<spring:url value="/customers" />" class="btn btn-default">
-                        <span class="glyphicon-hand-left glyphicon"></span> back
+                        <span class="glyphicon-hand-left glyphicon"></span><spring:message code="customer.button.back"/>
                     </a>
                 </div>
             </div>

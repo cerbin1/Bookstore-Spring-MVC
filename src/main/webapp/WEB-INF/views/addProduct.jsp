@@ -7,25 +7,26 @@
     <meta charset="utf-8">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Add product</title>
+    <title><spring:message code="addProduct.title"/></title>
 </head>
 <body>
 <section>
     <div class="pull-right" style="padding-right:50px">
-        <a href="?language=en">English</a>|<a href="?language=pl">Polish</a>
+        <a href="?language=en"><spring:message code="language.en"/></a>|
+        <a href="?language=pl"><spring:message code="language.pl"/></a>
     </div>
 </section>
 <section>
     <div class="jumbotron">
         <div class="container">
-            <h1>Product</h1>
+            <h1><spring:message code="addProduct.jumbotron.h1"/></h1>
         </div>
     </div>
 </section>
 <section class="container">
     <form:form method="POST" modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
         <fieldset>
-            <legend>Add new product</legend>
+            <legend><spring:message code="addProduct.legend"/></legend>
             <div class="form-group">
                 <div class="row">
                     <label class="control-label col-lg-2" for="productId">
@@ -116,7 +117,8 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <input type="submit" id="btnAdd" class="btn btn-primary" value="Add"/>
+                    <input type="submit" id="btnAdd" class="btn btn-primary"
+                           value="<spring:message code="addProduct.form.button.add"/>"/>
                 </div>
             </div>
         </fieldset>

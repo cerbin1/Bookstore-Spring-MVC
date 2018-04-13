@@ -6,14 +6,20 @@
 charset=ISO-8859-1">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Products</title>
+    <title><spring:message code="products.title"/></title>
 </head>
 <body>
 <section>
+    <div class="pull-right" style="padding-right:50px">
+        <a href="?language=en"><spring:message code="language.en"/></a>|
+        <a href="?language=pl"><spring:message code="language.pl"/></a>
+    </div>
+</section>
+<section>
     <div class="jumbotron">
         <div class="container">
-            <h1>Products</h1>
-            <p>All the available products in our store</p>
+            <h1><spring:message code="products.jumbotron.h1"/></h1>
+            <p><spring:message code="products.jumbotron.p"/></p>
         </div>
     </div>
 </section>
@@ -28,11 +34,12 @@ charset=ISO-8859-1">
                         <h3>${product.name}</h3>
                         <p>${product.description}</p>
                         <p>$${product.unitPrice}</p>
-                        <p>Available ${product.unitsInStock} units in stock</p>
+                        <p>${product.unitsInStock} <spring:message code="products.availableUnitsInStock"/></p>
                         <p>
                             <a href=" <spring:url value="/market/product?id=${product.productId}" />"
                                class="btn btn-primary">
-                                <span class="glyphicon-info-sign glyphicon"></span> Details
+                                <span class="glyphicon-info-sign glyphicon"></span>
+                                <spring:message code="products.productDetailsButton"/>
                             </a>
                         </p>
                     </div>

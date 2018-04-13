@@ -1,18 +1,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;
 charset=ISO-8859-1">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Customers</title>
+    <title><spring:message code="customers.title"/></title>
 </head>
 <body>
 <section>
+    <div class="pull-right" style="padding-right:50px">
+        <a href="?language=en"><spring:message code="language.en"/></a>|
+        <a href="?language=pl"><spring:message code="language.pl"/></a>
+    </div>
+</section>
+<section>
     <div class="jumbotron">
         <div class="container">
-            <h1>Customers</h1>
-            <p>List of our customers</p>
+            <h1><spring:message code="customers.jumbotron.h1"/></h1>
+            <p><spring:message code="customers.jumbotron.p"/></p>
         </div>
     </div>
 </section>
@@ -20,11 +27,11 @@ charset=ISO-8859-1">
     <div class="row">
         <table class="table table-striped">
             <row>
-                <td>Id</td>
-                <td>Name</td>
-                <td>Surname</td>
-                <td>Address</td>
-                <td>Number of orders</td>
+                <td><spring:message code="customers.table.id"/></td>
+                <td><spring:message code="customers.table.name"/></td>
+                <td><spring:message code="customers.table.surname"/></td>
+                <td><spring:message code="customers.table.address"/></td>
+                <td><spring:message code="customers.table.noOfOrders"/></td>
             </row>
             <c:forEach items="${customers}" var="customer">
                 <tr>
