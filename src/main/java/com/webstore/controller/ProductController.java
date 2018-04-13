@@ -37,7 +37,8 @@ public class ProductController {
                 "unitsInStock",
                 "condition",
                 "productImage",
-                "productManualFile");
+                "productManualFile",
+                "language");
     }
 
     @RequestMapping("products")

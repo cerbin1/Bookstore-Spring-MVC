@@ -3,13 +3,18 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html;
-charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta charset="utf-8">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <title>Add product</title>
 </head>
 <body>
+<section>
+    <div class="pull-right" style="padding-right:50px">
+        <a href="?language=en">English</a>|<a href="?language=pl">Polish</a>
+    </div>
+</section>
 <section>
     <div class="jumbotron">
         <div class="container">
