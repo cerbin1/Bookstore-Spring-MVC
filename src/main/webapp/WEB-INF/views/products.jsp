@@ -33,7 +33,7 @@ charset=ISO-8859-1">
                     <div class="caption">
                         <h3>${product.name}</h3>
                         <p>${product.description}</p>
-                        <p>$${product.unitPrice}</p>
+                        <p><spring:message code="products.price"/> ${product.unitPrice}</p>
                         <p>${product.unitsInStock} <spring:message code="products.availableUnitsInStock"/></p>
                         <p>
                             <a href=" <spring:url value="/market/product?id=${product.productId}" />"
