@@ -12,7 +12,8 @@ charset=ISO-8859-1">
 <body>
 <section>
     <div class="pull-right" style="padding-right:50px">
-        <a href="?language=en"><spring:message code="language.en"/></a>|
+        <a href="?language=en"><spring:message code="language.en"/></a>
+        |
         <a href="?language=pl"><spring:message code="language.pl"/></a>
     </div>
 </section>
