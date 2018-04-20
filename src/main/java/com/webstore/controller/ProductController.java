@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -82,10 +83,14 @@ public class ProductController {
 
     @RequestMapping(value = "products/add", method = RequestMethod.POST)
     public String processAddProductForm(
-            @ModelAttribute("newProduct") Product newProduct,
+            @ModelAttribute("newProduct") @Valid Product newProduct,
             BindingResult result,
             HttpServletRequest request
     ) {
+        if (result.hasErrors()) {
+            return "addProduct";
+        }
+
         String[] suppressedFields = result.getSuppressedFields();
         if (suppressedFields.length > 0) {
             throw new RuntimeException("Attempting to bind disallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
