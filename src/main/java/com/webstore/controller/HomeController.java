@@ -19,7 +19,7 @@ public class HomeController {
     public String hi(RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("greeting", "Welcome");
         redirectAttributes.addFlashAttribute("shop", "Store");
-        return "redirect:/redirect_hi_message/";
+        return "redirect:/redirect_welcome_message/";
     }
 
     @RequestMapping("redirect_welcome_message")
