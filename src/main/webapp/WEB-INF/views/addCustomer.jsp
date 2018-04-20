@@ -15,6 +15,9 @@ charset=ISO-8859-1">
         <a href="?language=en"><spring:message code="language.en"/></a>
         |
         <a href="?language=pl"><spring:message code="language.pl"/></a>
+        <a href="<c:url value="/logout"/>">
+            <spring:message code="addProduct.logout"/>
+        </a>
     </div>
 </section>
 <section>
