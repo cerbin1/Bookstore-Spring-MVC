@@ -33,43 +33,43 @@ charset=ISO-8859-1">
             <legend><spring:message code="addCustomer.legend"/></legend>
             <div class="form-group">
                 <div class="row">
-                    <label class="control-label col-lg-2" for="productId"><spring:message
-                            code="addCustomer.form.customerId.label"/></label>
+                    <label class="control-label col-lg-2" for="productId">
+                        <spring:message code="addCustomer.form.customerId.label"/>
+                    </label>
                     <div class="col-lg-10">
-                        <form:input id="productId" path="customerId"
-                                    type="text" class="form:input-large"/>
+                        <form:input id="productId" path="customerId" type="text" class="form:input-large"/>
                     </div>
                 </div>
                 <div class="row">
-                    <label class="control-label col-lg-2 " for="name"><spring:message
-                            code="addCustomer.form.customerName.label"/></label>
+                    <label class="control-label col-lg-2 " for="name">
+                        <spring:message code="addCustomer.form.customerName.label"/>
+                    </label>
                     <div class="col-lg-10">
-                        <form:input id="name" path="name"
-                                    type="text" class="form:input-large"/>
+                        <form:input id="name" path="name" type="text" class="form:input-large"/>
                     </div>
                 </div>
                 <div class="row">
-                    <label class="control-label col-lg-2 " for="surname"><spring:message
-                            code="addCustomer.form.customerSurname.label"/></label>
+                    <label class="control-label col-lg-2 " for="surname">
+                        <spring:message code="addCustomer.form.customerSurname.label"/>
+                    </label>
                     <div class="col-lg-10">
-                        <form:input id="surname" path="surname"
-                                    type="text" class="form:input-large"/>
+                        <form:input id="surname" path="surname" type="text" class="form:input-large"/>
                     </div>
                 </div>
                 <div class="row">
-                    <label class="control-label col-lg-2" for="address"><spring:message
-                            code="addCustomer.form.customerAddress.label"/></label>
+                    <label class="control-label col-lg-2" for="address">
+                        <spring:message code="addCustomer.form.customerAddress.label"/>
+                    </label>
                     <div class="col-lg-10">
-                        <form:input id="address" path="address"
-                                    type="text" class="form:input-large"/>
+                        <form:input id="address" path="address" type="text" class="form:input-large"/>
                     </div>
                 </div>
                 <div class="row">
-                    <label class="control-label col-lg-2" for="noOfOrders"><spring:message
-                            code="addCustomer.form.customerNumberOfOrders.label"/></label>
+                    <label class="control-label col-lg-2" for="noOfOrders">
+                        <spring:message code="addCustomer.form.customerNumberOfOrders.label"/>
+                    </label>
                     <div class="col-lg-10">
-                        <form:input id="noOfOrders" path="noOfOrders"
-                                    type="text" class="form:input-large"/>
+                        <form:input id="noOfOrders" path="noOfOrders" type="text" class="form:input-large"/>
                     </div>
                 </div>
                 <br>
