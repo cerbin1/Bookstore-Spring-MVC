@@ -14,8 +14,12 @@ import java.util.Map;
 
 @Repository
 public class SqlCustomerRepository implements CustomerRepository {
+    private final NamedParameterJdbcTemplate jdbcTemplate;
+
     @Autowired
-    private NamedParameterJdbcTemplate jdbcTemplate;
+    public SqlCustomerRepository(NamedParameterJdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public List<Customer> getAllCustomers() {

@@ -22,8 +22,12 @@ import java.util.Map;
 @RequestMapping("market")
 @Controller
 public class ProductController {
+    private final ProductService productService;
+
     @Autowired
-    ProductService productService;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @InitBinder
     public void initializeBinder(WebDataBinder binder) {

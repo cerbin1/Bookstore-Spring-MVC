@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class CustomerController {
+    private final CustomerService customerService;
+
     @Autowired
-    private CustomerService customerService;
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     @RequestMapping("customers")
     public String getAllCustomers(Model model) {

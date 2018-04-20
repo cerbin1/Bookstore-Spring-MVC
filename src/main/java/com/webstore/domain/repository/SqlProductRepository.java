@@ -16,8 +16,12 @@ import java.util.Map;
 
 @Repository
 public class SqlProductRepository implements ProductRepository {
+    private final NamedParameterJdbcTemplate jdbcTemplate;
+
     @Autowired
-    private NamedParameterJdbcTemplate jdbcTemplate;
+    public SqlProductRepository(NamedParameterJdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public List<Product> getAllProducts() {
