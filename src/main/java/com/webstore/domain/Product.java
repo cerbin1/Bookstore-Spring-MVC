@@ -33,7 +33,6 @@ public class Product {
     private MultipartFile productImage;
     @JsonIgnore
     private MultipartFile productManualFile;
-    private String string;
 
     public Product(String productId, String name, BigDecimal unitPrice) {
         this.productId = productId;
@@ -173,9 +172,5 @@ public class Product {
         int result = 1;
         result = prime * result + ((productId == null) ? 0 : productId.hashCode());
         return result;
-    }
-
-    public String get() {
-        return string;
     }
 }

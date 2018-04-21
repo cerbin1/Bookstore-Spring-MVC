@@ -95,8 +95,9 @@
             </div>
             <div class="form-group">
                 <div class="row">
-                    <label class="control-label col-lg-2"><spring:message
-                            code="addProduct.form.productCondition.label"/></label>
+                    <label class="control-label col-lg-2">
+                        <spring:message code="addProduct.form.productCondition.label"/>
+                    </label>
                     <div class="col-lg-10">
                         <label class="control-label" for="condition-new">
                             <spring:message code="addProduct.form.productCondition.new.label"/>
