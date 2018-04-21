@@ -66,6 +66,7 @@
                     </label>
                     <div class="col-lg-10">
                         <form:input id="manufacturer" path="manufacturer" type="text" class="form:input-large"/>
+                        <form:errors path="manufacturer" cssClass="text-danger"/>
                     </div>
                 </div>
                 <div class="row">
@@ -74,6 +75,7 @@
                     </label>
                     <div class="col-lg-10">
                         <form:input id="category" path="category" type="text" class="form:input-large"/>
+                        <form:errors path="category" cssClass="text-danger"/>
                     </div>
                 </div>
                 <div class="row">
@@ -82,6 +84,7 @@
                     </label>
                     <div class="col-lg-10">
                         <form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
+                        <form:errors path="unitsInStock" cssClass="text-danger"/>
                     </div>
                 </div>
             </div>
@@ -91,6 +94,7 @@
                 </label>
                 <div class="col-lg-10">
                     <form:textarea id="description" path="description" rows="2"/>
+                    <form:errors path="description" cssClass="text-danger"/>
                 </div>
             </div>
             <div class="form-group">
