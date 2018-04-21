@@ -31,13 +31,15 @@ charset=ISO-8859-1">
     <form:form method="POST" modelAttribute="newCustomer" class="form-horizontal">
         <fieldset>
             <legend><spring:message code="addCustomer.legend"/></legend>
+            <form:errors path="*" cssClass="alert alert-danger" element="div"/>
             <div class="form-group">
                 <div class="row">
-                    <label class="control-label col-lg-2" for="productId">
+                    <label class="control-label col-lg-2" for="customerId">
                         <spring:message code="addCustomer.form.customerId.label"/>
                     </label>
                     <div class="col-lg-10">
-                        <form:input id="productId" path="customerId" type="text" class="form:input-large"/>
+                        <form:input id="customerId" path="customerId" type="text" class="form:input-large"/>
+                        <form:errors path="customerId" cssClass="text-danger"/>
                     </div>
                 </div>
                 <div class="row">
@@ -46,6 +48,7 @@ charset=ISO-8859-1">
                     </label>
                     <div class="col-lg-10">
                         <form:input id="name" path="name" type="text" class="form:input-large"/>
+                        <form:errors path="name" cssClass="text-danger"/>
                     </div>
                 </div>
                 <div class="row">
@@ -54,6 +57,7 @@ charset=ISO-8859-1">
                     </label>
                     <div class="col-lg-10">
                         <form:input id="surname" path="surname" type="text" class="form:input-large"/>
+                        <form:errors path="surname" cssClass="text-danger"/>
                     </div>
                 </div>
                 <div class="row">
@@ -62,6 +66,7 @@ charset=ISO-8859-1">
                     </label>
                     <div class="col-lg-10">
                         <form:input id="address" path="address" type="text" class="form:input-large"/>
+                        <form:errors path="address" cssClass="text-danger"/>
                     </div>
                 </div>
                 <div class="row">
@@ -70,6 +75,7 @@ charset=ISO-8859-1">
                     </label>
                     <div class="col-lg-10">
                         <form:input id="noOfOrders" path="noOfOrders" type="text" class="form:input-large"/>
+                        <form:errors path="noOfOrders" cssClass="text-danger"/>
                     </div>
                 </div>
                 <br>
