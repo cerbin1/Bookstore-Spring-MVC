@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 
 @XmlRootElement
 public class Product {
+    @Size(max = 25, message = "{Size.Product.productId.validation}")
     @Pattern(regexp = "P[1-9]+", message = "{Pattern.Product.productId.validation}")
     private String productId;
 
@@ -21,12 +22,26 @@ public class Product {
     @NotNull(message = "{NotNull.Product.unitPrice.validation}")
     private BigDecimal unitPrice;
 
+    @Size(max = 250, message = "{Size.Product.description.validation}")
     private String description;
+
+    @Size(min = 3, max = 50, message = "{Size.Product.manufacturer.validation}")
     private String manufacturer;
+
+    @Size(min = 3, max = 50, message = "{Size.Product.category.validation}")
     private String category;
+
+    @Min(value = 0, message = "{Min.Product.unitsInStock.validation}")
+    @Max(value = 1000, message = "{Max.Product.unitsInStock.validation}")
     private long unitsInStock;
+
+    @Min(value = 0, message = "{Min.Product.unitsInOrder.validation}")
+    @Max(value = 1000, message = "{Max.Product.unitsInOrder.validation}")
     private long unitsInOrder;
+
     private boolean discontinued;
+
+    @Size(max = 50)
     private String condition;
 
     @JsonIgnore
