@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .accessDeniedPage("/login?accessDenied");
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/**/customers/**").access("hasRole('USER')")
                 .antMatchers("/**/add").access("hasRole('ADMIN')")
                 .antMatchers("/**/market/**").access("hasRole('USER')");
         http.csrf().disable();
