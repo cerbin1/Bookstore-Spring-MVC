@@ -4,7 +4,7 @@ import com.webstore.domain.Product;
 import com.webstore.exception.NoProductsFoundUnderCategoryException;
 import com.webstore.exception.ProductNotFoundException;
 import com.webstore.service.ProductService;
-import com.webstore.validator.UnitsInStockValidator;
+import com.webstore.validator.ProductValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,17 +25,17 @@ import java.util.Map;
 @Controller
 public class ProductController {
     private final ProductService productService;
-    private final UnitsInStockValidator unitsInStockValidator;
+    private final ProductValidator productValidator;
 
     @Autowired
-    public ProductController(ProductService productService, UnitsInStockValidator unitsInStockValidator) {
+    public ProductController(ProductService productService, ProductValidator productValidator) {
         this.productService = productService;
-        this.unitsInStockValidator = unitsInStockValidator;
+        this.productValidator = productValidator;
     }
 
     @InitBinder
     public void initializeBinder(WebDataBinder binder) {
-        binder.setValidator(unitsInStockValidator);
+        binder.setValidator(productValidator);
         binder.setAllowedFields(
                 "productId",
                 "name",

@@ -2,6 +2,8 @@ package com.webstore.config;
 
 import com.webstore.domain.Product;
 import com.webstore.interceptor.PromoCodeInterceptor;
+import com.webstore.validator.ProductValidator;
+import com.webstore.validator.UnitsInStockValidator;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -26,9 +28,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import org.springframework.web.servlet.view.xml.MarshallingView;
 import org.springframework.web.util.UrlPathHelper;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @Configuration
 @EnableWebMvc
@@ -140,5 +140,14 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
     @Override
     public Validator getValidator() {
         return validator();
+    }
+
+    @Bean
+    public ProductValidator productValidator() {
+        Set<Validator> springValidators = new HashSet<>();
+        springValidators.add(new UnitsInStockValidator());
+        ProductValidator productValidator = new ProductValidator();
+        productValidator.setSpringValidators(springValidators);
+        return productValidator;
     }
 }
