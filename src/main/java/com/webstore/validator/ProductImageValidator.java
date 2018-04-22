@@ -17,7 +17,8 @@ public class ProductImageValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         Product product = (Product) target;
-        if (product.getProductImage() != null && product.getProductImage().getSize() > ALLOWED_BYTES_FOR_IMAGES) {
+        if (product.getProductImage() != null
+                && product.getProductImage().getSize() > ALLOWED_BYTES_FOR_IMAGES) {
             errors.rejectValue("productImage", "com.webstore.validator.ProductImageValidator.message");
         }
     }
