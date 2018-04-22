@@ -1,6 +1,7 @@
 package com.webstore.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.webstore.validator.ProductId;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.*;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 public class Product {
     @Size(max = 25, message = "{Size.Product.productId.validation}")
     @Pattern(regexp = "P[1-9]+", message = "{Pattern.Product.productId.validation}")
+    @ProductId
     private String productId;
 
     @Size(min = 3, max = 100, message = "{Size.Product.name.validation}")
