@@ -1,6 +1,7 @@
 package com.webstore.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.webstore.validator.ProductCategory;
 import com.webstore.validator.ProductId;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,6 +32,7 @@ public class Product {
     private String manufacturer;
 
     @Size(min = 3, max = 50, message = "{Size.Product.category.validation}")
+    @ProductCategory
     private String category;
 
     @Min(value = 0, message = "{Min.Product.unitsInStock.validation}")
