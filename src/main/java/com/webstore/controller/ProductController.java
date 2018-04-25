@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -134,6 +135,23 @@ public class ProductController {
     @RequestMapping("products/invalidPromoCode")
     public String invalidPromoCode() {
         return "invalidPromoCode";
+    }
+
+    @RequestMapping("specialOffer")
+    public String specialOffer(Model model) {
+        Product specialOfferProduct = new Product();
+        specialOfferProduct.setProductId("P1");
+        specialOfferProduct.setName("XIAOMI Mi Drone");
+        specialOfferProduct.setUnitPrice(new BigDecimal(250));
+        specialOfferProduct.setDescription("4K UHD WiFi FPV Quadcopter - WHITE CN PLUG");
+        specialOfferProduct.setManufacturer("Xiaomi");
+        specialOfferProduct.setCategory("Drones");
+        specialOfferProduct.setUnitsInStock(10);
+        specialOfferProduct.setUnitsInOrder(0);
+        specialOfferProduct.setDiscontinued(false);
+        specialOfferProduct.setCondition("New");
+        model.addAttribute("specialOfferProduct", specialOfferProduct);
+        return "specialOffer";
     }
 
     @ExceptionHandler(ProductNotFoundException.class)

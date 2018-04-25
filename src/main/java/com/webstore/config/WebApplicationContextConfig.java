@@ -126,7 +126,7 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
     public HandlerInterceptor promoCodeInterceptor() {
         PromoCodeInterceptor promoCodeInterceptor = new PromoCodeInterceptor();
         promoCodeInterceptor.setPromoCode("Promo15");
-        promoCodeInterceptor.setOfferRedirect("market/products");
+        promoCodeInterceptor.setOfferRedirect("market/specialOffer");
         promoCodeInterceptor.setErrorRedirect("invalidPromoCode");
         return promoCodeInterceptor;
     }
