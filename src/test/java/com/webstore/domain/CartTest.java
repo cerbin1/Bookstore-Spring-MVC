@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.*;
+
 public class CartTest {
     @Test
     public void shouldGetItemByProductId() {
@@ -26,7 +28,7 @@ public class CartTest {
         CartItem cartItem = cart.getItemByProductId(productId);
 
         // then
-        Assert.assertEquals(cartItemToFind, cartItem);
+        assertEquals(cartItemToFind, cartItem);
     }
 
     @Test
@@ -39,7 +41,7 @@ public class CartTest {
         CartItem cartItem = cart.getItemByProductId("123");
 
         // then
-        Assert.assertNull(cartItem);
+        assertNull(cartItem);
     }
 
     @Test
@@ -53,7 +55,7 @@ public class CartTest {
         BigDecimal grandTotal = cart.getGrandTotal();
 
         // then
-        Assert.assertEquals(new BigDecimal(3500), grandTotal);
+        assertEquals(new BigDecimal(3500), grandTotal);
 
     }
 
