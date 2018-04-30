@@ -19,6 +19,8 @@ public class RootApplicationContextConfig {
                 .setType(EmbeddedDatabaseType.H2)
                 .addScript("db/sql/create-table-products.sql")
                 .addScript("db/sql/create-table-customers.sql")
+                .addScript("db/sql/create-table-cart.sql")
+                .addScript("db/sql/create-table-cart_item.sql")
                 .addScript("db/sql/insert-data.sql")
                 .build();
     }
