@@ -45,7 +45,7 @@ public class Product {
 
     private boolean discontinued;
 
-    @Size(max = 50)
+    @Size(max = 50, message = "{Size.Product.condition.validation}")
     private String condition;
 
     @JsonIgnore
