@@ -2,26 +2,26 @@ Electronic Webstore application written in Java using SpringMVC framework.
 
 Used technologies:
 
-Java 8
+Backend: Java 8, Spring, Spring MVC, Spring Security
 
-Spring
+Front/View technologies: JSP, JSTL, Bootstrap
 
-Spring MVC
+Other:
+Apache Commons - for working with Files in html forms
 
-Spring Security
+Jackson - Converting Domain objects to JSON
 
-JSP
+Hibernate Validator - For Domain object fields validation used then in forms
 
-JSTL
+Testing
+Junit - for testing
 
-Bootstrap
+Database
+Spring JDBC
+H2 - lightweight embedded database
 
-Apache Commons
-
-Jackson
-
-Hibernate Validator
-
-Junit
-
+Building project
 Maven
+
+Web Server
+Apache Tomcat
