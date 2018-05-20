@@ -96,22 +96,19 @@ public class ProductController {
             return "addProduct";
         }
 
-        String[] suppressedFields = result.getSuppressedFields();
-        if (suppressedFields.length > 0) {
-            throw new RuntimeException("Attempting to bind disallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
-        }
+        checkForErrors(result);
+
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 
-        MultipartFile productImage = newProduct.getProductImage();
-        if (productImage != null && !productImage.isEmpty()) {
-            try {
-                String path = rootDirectory + "resources/images/" + newProduct.getProductId() + ".jpg";
-                productImage.transferTo(new File(path));
-            } catch (Exception e) {
-                throw new RuntimeException("Product Image saving failed", e);
-            }
-        }
+        setProductImage(newProduct, rootDirectory);
 
+        setProductManualFile(newProduct, rootDirectory);
+
+        productService.addProduct(newProduct);
+        return "redirect:/market/products";
+    }
+
+    private void setProductManualFile(@ModelAttribute("newProduct") @Valid Product newProduct, String rootDirectory) {
         MultipartFile productManualFile = newProduct.getProductManualFile();
         if (productManualFile != null && !productManualFile.isEmpty()) {
             try {
@@ -121,9 +118,25 @@ public class ProductController {
                 throw new RuntimeException("Product Manual file saving failed", e);
             }
         }
+    }
 
-        productService.addProduct(newProduct);
-        return "redirect:/market/products";
+    private void checkForErrors(BindingResult result) {
+        String[] suppressedFields = result.getSuppressedFields();
+        if (suppressedFields.length > 0) {
+            throw new RuntimeException("Attempting to bind disallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
+        }
+    }
+
+    private void setProductImage(@ModelAttribute("newProduct") @Valid Product newProduct, String rootDirectory) {
+        MultipartFile productImage = newProduct.getProductImage();
+        if (productImage != null && !productImage.isEmpty()) {
+            try {
+                String path = rootDirectory + "resources/images/" + newProduct.getProductId() + ".jpg";
+                productImage.transferTo(new File(path));
+            } catch (Exception e) {
+                throw new RuntimeException("Product Image saving failed", e);
+            }
+        }
     }
 
     @RequestMapping("stock/update")
