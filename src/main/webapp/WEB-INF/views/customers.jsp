@@ -24,6 +24,10 @@ charset=ISO-8859-1">
         <div class="container">
             <h1><spring:message code="customers.jumbotron.h1"/></h1>
             <p><spring:message code="customers.jumbotron.p"/></p>
+            <a href=" <spring:url value="/customers/add"/>"
+               class="btn btn-primary">
+                <spring:message code="customers.jumbotron.addNewCustomerButton"/>
+            </a>
         </div>
     </div>
 </section>
